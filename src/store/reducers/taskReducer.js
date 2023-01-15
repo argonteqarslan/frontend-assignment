@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-const todoReducer = (todos = [], action) => {
+const taskReducer = (todos = [], action) => {
   switch (action.type) {
     case "GET_TASKS":
 
@@ -42,4 +42,4 @@ const todoReducer = (todos = [], action) => {
   }
 };
 
-export default todoReducer;
+export default taskReducer;
