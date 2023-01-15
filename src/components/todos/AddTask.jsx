@@ -16,7 +16,7 @@ const useStyles = makeStyles({
         display: "flex",
         justifyContent: "space-between",
         marginTop: "150px",
-        backgroundColor: "silver"
+        backgroundColor: "#fff685"
     },
     submitButton: {
         marginLeft: "20px",
@@ -63,7 +63,7 @@ const AddTask = ({ todo, setTodo }) => {
                     onChange={(e) => setTodo({ ...todo, name: e.target.value })}
                 />
                 <Button variant="contained" color="primary" className={classes.submitButton} type="submit">
-                    <Send />
+                   create
                 </Button>
             </form>
         </>

@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     boxShadow: "0px 0px 12px -3px #000000",
     height: "500px",
     marginTop:"100px",
-    backgroundColor:"silver"
+    backgroundColor:"#fff685"
     },
   spacing: {
     marginTop: "20px",

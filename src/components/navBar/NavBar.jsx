@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  text: {
+    color: '#fff685'
+  },
   linkStyle: {
     textDecoration: "none",
     color: "#fafafa",
@@ -44,13 +47,13 @@ const NavBar = () => {
           <Toolbar>
             <Typography variant="h4" className={classes.title}>
               <Link className={classes.linkStyle} to="/">
-                TASKS APP
+                <div className={classes.text}>TASKS APP</div>
               </Link>
             </Typography>
             {user._id ? (
               <>
                 <Typography variant="subtitle2" className={classes.title}>
-                  Logged in as {user.firstName}
+                <div className={classes.text}>   Logged in as {user.firstName} </div>
                 </Typography>
                 <Button
                   edge="end"
@@ -59,7 +62,7 @@ const NavBar = () => {
                   onClick={() => handleSignOut()}
                 >
                   <Link className={classes.linkStyle} to="/">
-                    SignOut
+                  <div className={classes.text}>  SignOut </div>
                   </Link>
                 </Button>
               </>
@@ -71,7 +74,7 @@ const NavBar = () => {
                   className={classes.authButton}
                 >
                   <Link className={classes.linkStyle} to="/signin">
-                    SignIn
+                    <div className={classes.text}>SignIn</div>
                   </Link>
                 </Button>
                 <Button
@@ -80,7 +83,7 @@ const NavBar = () => {
                   className={classes.authButton}
                 >
                   <Link className={classes.linkStyle} to="/signup">
-                    SignUp
+                  <div className={classes.text}> SignUp</div>
                   </Link>
                 </Button>
               </>
