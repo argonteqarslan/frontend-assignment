@@ -51,7 +51,7 @@ export const signIn = (email, password) => {
 export const signOut = () => {
   return (dispatch) => {
     dispatch({
-      type: "CLEAR_TODOS",
+      type: "CLEAR_TASKS",
     });
 
     dispatch({

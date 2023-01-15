@@ -2,14 +2,14 @@ import axios from "axios";
 import { url, setHeaders } from "../../api";
 import { toast } from "react-toastify";
 
-export const getTodos = () => {
+export const getTasks = () => {
   return (dispatch) => {
     axios
       .get(`${url}/tasks/all`, setHeaders())
       .then((todos) => {
 
         dispatch({
-          type: "GET_TODOS",
+          type: "GET_TASKS",
           todos: todos.data.data,
         });
       })
@@ -19,7 +19,7 @@ export const getTodos = () => {
   };
 };
 
-export const addTodo = (newTodo) => {
+export const addTask = (newTodo) => {
 
   return (dispatch, getState) => {
     const author = getState().auth.name;
@@ -28,7 +28,7 @@ export const addTodo = (newTodo) => {
       .post(`${url}/tasks/create`, { ...newTodo, author, uid }, setHeaders())
       .then((todo) => {
         dispatch({
-          type: "ADD_TODO",
+          type: "ADD_TASK",
           todo,
         });
       })
@@ -42,13 +42,13 @@ export const addTodo = (newTodo) => {
   };
 };
 
-export const updateTodo = (updatedTodo, id) => {
+export const updateTask = (updatedTodo, id) => {
   return (dispatch) => {
     axios
-      .put(`${url}/todos/${id}`, updatedTodo, setHeaders())
+      .put(`${url}/tasks/${id}`, updatedTodo, setHeaders())
       .then((todo) => {
         dispatch({
-          type: "UPDATE_TODO",
+          type: "UPDATE_TASK",
           todo,
         });
       })
@@ -61,13 +61,13 @@ export const updateTodo = (updatedTodo, id) => {
   };
 };
 
-export const deleteTodo = (id) => {
+export const deleteTask = (id) => {
   return (dispatch) => {
     axios
-      .delete(`${url}/todos/${id}`, setHeaders())
+      .delete(`${url}/tasks/${id}`, setHeaders())
       .then(() => {
         dispatch({
-          type: "DELETE_TODO",
+          type: "DELETE_TASK",
           id,
         });
       })
@@ -80,13 +80,13 @@ export const deleteTodo = (id) => {
   };
 };
 
-export const checkTodo = (id) => {
+export const checkTask = (id) => {
   return (dispatch) => {
     axios
-      .patch(`${url}/todos/${id}`, {}, setHeaders())
+      .patch(`${url}/tasks/${id}`, {}, setHeaders())
       .then((todo) => {
         dispatch({
-          type: "CHECK_TODO",
+          type: "CHECK_TASK",
           todo,
         });
       })

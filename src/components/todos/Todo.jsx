@@ -6,7 +6,7 @@ import { Typography, ButtonGroup, Button } from "@material-ui/core";
 import { Create, Delete, CheckCircle } from "@material-ui/icons";
 import moment from "moment";
 
-import { deleteTodo, checkTodo } from "../../store/actions/todoActions";
+import { deleteTask, checkTask } from "../../store/actions/todoActions";
 
 const useStyles = makeStyles({
   todoStyle: {
@@ -44,11 +44,11 @@ const Todo = ({ todo, setTodo, todos }) => {
   };
 
   const handleDelete = (id) => {
-    dispatch(deleteTodo(id));
+    dispatch(deleteTask(id));
   };
 
   const handleCheck = (id) => {
-    dispatch(checkTodo(id));
+    dispatch(checkTask(id));
   };
 
   return (

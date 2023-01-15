@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import AddTodo from "./AddTodo";
-import ListTodos from "./ListTodos";
+import AddTask from "./AddTask";
+import ListTasks from "./ListTasks";
 
 
-const Todos = () => {
+const Tasks = () => {
   const [todo, setTodo] = useState({
     name: "",
     isComplete: false,
@@ -13,16 +13,16 @@ const Todos = () => {
     <>
       {1 ? (
         <>
-          <AddTodo todo={todo} setTodo={setTodo} />
-          <ListTodos todo={todo} setTodo={setTodo} />
+          <AddTask todo={todo} setTodo={setTodo} />
+          <ListTasks todo={todo} setTodo={setTodo} />
         </>
       ) : (
         <>
-          <ListTodos todo={todo} setTodo={setTodo} />
+          <ListTasks todo={todo} setTodo={setTodo} />
         </>
       )}
     </>
   );
 };
 
-export default Todos;
+export default Tasks;

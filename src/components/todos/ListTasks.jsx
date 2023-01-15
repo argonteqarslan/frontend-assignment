@@ -7,7 +7,7 @@ import Todo from "./Todo";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 
-import { getTodos } from "../../store/actions/todoActions";
+import { getTasks } from "../../store/actions/todoActions";
 
 const useStyles = makeStyles({
   todosStyle: {
@@ -18,14 +18,14 @@ const useStyles = makeStyles({
   },
 });
 
-const ListTodos = ({ todo, setTodo }) => {
+const ListTasks = ({ todo, setTodo }) => {
   const auth = useSelector((state) => state.auth);
   const todos = useSelector((state) => state.todos);
   const classes = useStyles();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getTodos());
+    dispatch(getTasks());
   }, [todo._id, dispatch]);
 
   if (!auth._id) return <Redirect to="/signin" />;
@@ -54,4 +54,4 @@ const ListTodos = ({ todo, setTodo }) => {
   );
 };
 
-export default ListTodos;
+export default ListTasks;

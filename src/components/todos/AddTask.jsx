@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { TextField, Button } from '@material-ui/core';
 import { Send } from '@material-ui/icons';
 
-import { addTodo, updateTodo } from '../../store/actions/todoActions';
+import { addTask, updateTask } from '../../store/actions/todoActions';
 
 const useStyles = makeStyles({
     formStyle: {
@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     }
 });
 
-const AddTodo = ({ todo, setTodo }) => {
+const AddTask = ({ todo, setTodo }) => {
     const classes = useStyles();
     const dispatch = useDispatch()
 
@@ -37,7 +37,7 @@ const AddTodo = ({ todo, setTodo }) => {
                 description: todo.description
             }
 
-            dispatch(updateTodo(updatedTodo, id));
+            dispatch(updateTask(updatedTodo, id));
 
         } else {
             const newTodo = {
@@ -45,7 +45,7 @@ const AddTodo = ({ todo, setTodo }) => {
                 date: new Date()
             }
 
-            dispatch(addTodo(newTodo));
+            dispatch(addTask(newTodo));
         }
         setTodo({ name: '', isComplete: false });
     }
@@ -70,4 +70,4 @@ const AddTodo = ({ todo, setTodo }) => {
     );
 }
 
-export default AddTodo;
+export default AddTask;

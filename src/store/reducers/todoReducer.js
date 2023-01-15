@@ -2,15 +2,15 @@ import { toast } from "react-toastify";
 
 const todoReducer = (todos = [], action) => {
   switch (action.type) {
-    case "GET_TODOS":
+    case "GET_TASKS":
 
       return action.todos;
-    case "ADD_TODO":
+    case "ADD_TASK":
       toast.success("A todo was added...", {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
       return [action.todo.data, ...todos];
-    case "UPDATE_TODO":
+    case "UPDATE_TASK":
       toast.success("A todo was updated...", {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
@@ -20,7 +20,7 @@ const todoReducer = (todos = [], action) => {
 
       }
       );
-    case "CHECK_TODO":
+    case "CHECK_TASK":
       toast.success("A todo status was changed...", {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
@@ -30,12 +30,12 @@ const todoReducer = (todos = [], action) => {
 
       }
       );
-    case "DELETE_TODO":
+    case "DELETE_TASK":
       toast.success("A todo was deleted...", {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
       return todos.filter((todo) => todo._id !== action.id);
-    case "CLEAR_TODOS":
+    case "CLEAR_TASKS":
       return [];
     default:
       return todos;
