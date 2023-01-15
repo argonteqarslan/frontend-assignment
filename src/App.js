@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect,useEffect } from 'react';
 
 import { makeStyles } from "@material-ui/core/styles";
 import { Container } from '@material-ui/core';
@@ -28,7 +28,9 @@ function App() {
   useEffect(() => {
     dispatch(loadUser());
   }, [dispatch]);
-
+  useLayoutEffect(() => {
+    document.body.style.backgroundColor = "black"
+});
   return (
     <div>
       <BrowserRouter>
