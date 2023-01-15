@@ -16,6 +16,7 @@ const useStyles = makeStyles({
     borderRadius: "9px",
     display: "flex",
     justifyContent: "space-between",
+    color:"white"
   },
   moreStyle: {
     color: "#8f8f8f",
